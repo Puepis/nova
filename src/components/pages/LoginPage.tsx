@@ -2,8 +2,10 @@ import React from "react";
 import { Box, Flex, Image, Heading, Button } from "@chakra-ui/react";
 import LoginBackgroundImage from "../../assets/login-background.png";
 import LoginForm from "../auth/LoginForm";
+import { useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
+  const navigate = useNavigate();
   return (
     <Flex>
       <Flex background="gray.100" width="40vw" height="100vh">
@@ -41,7 +43,7 @@ const LoginPage = () => {
           backgroundColor="purple.200"
           color="white"
           width="100%"
-          onClick={() => {}}
+          onClick={() => navigate("/overview")}
           textTransform="none"
         >
           Login
