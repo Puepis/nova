@@ -1,5 +1,5 @@
 import React from "react";
-import { Flex, Image, Heading, Button } from "@chakra-ui/react";
+import { Box, Flex, Image, Heading, Button } from "@chakra-ui/react";
 import LoginBackgroundImage from "../../assets/login-background.png";
 import LoginForm from "../auth/LoginForm";
 
@@ -8,18 +8,21 @@ const LoginPage = () => {
     <Flex>
       <Flex background="gray.100" width="40vw" height="100vh">
         <Flex direction="column" height="100%">
-          <Flex margin="40px">
+          <Flex margin="20px">
             {/* <Image width="80px" src={Logo} alt="Nova logo" /> */}
             <Heading as="h3" size="lg" marginLeft="40px">
               Nova
             </Heading>
           </Flex>
-          <Image
-            width="100%"
-            marginTop="80px"
-            src={LoginBackgroundImage}
-            alt="Login background image"
-          />
+          <Flex height="100%" justifyContent="center" direction="column">
+            <Box marginLeft="20px" marginBottom="140px">
+              <Image
+                width="90%"
+                src={LoginBackgroundImage}
+                alt="Login background image"
+              />
+            </Box>
+          </Flex>
         </Flex>
       </Flex>
       <Flex
@@ -35,7 +38,8 @@ const LoginPage = () => {
         <LoginForm />
         <Button
           marginTop="32px"
-          colorScheme="purple"
+          backgroundColor="purple.200"
+          color="white"
           width="100%"
           onClick={() => {}}
           textTransform="none"
