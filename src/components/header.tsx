@@ -4,7 +4,7 @@ import { Flex, Button, Text } from '@chakra-ui/react';
 const Header = () => {
   return (
     <>
-      <Flex position="fixed" w="100%">
+      <Flex w="100%">
         <Text margin="8px 0px 0px 16px" fontFamily="inter" fontWeight="bold" fontSize="30px">
           Nova
         </Text>
