@@ -14,6 +14,11 @@ export const getLocalStorageObj = (localStorageKey: string) => {
   return object;
 };
 
+// Store an object in local storage
+export const setLocalStorageObj = (localStorageKey: string, obj: any) => {
+  localStorage.setItem(localStorageKey, JSON.stringify(obj));
+};
+
 // Get a property of an object value from localStorage
 export const getLocalStorageObjProperty = (
   localStorageKey: string,
