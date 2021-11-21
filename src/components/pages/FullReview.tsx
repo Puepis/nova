@@ -1,22 +1,13 @@
-import React, { Dispatch, SetStateAction, useState } from "react";
-import { Text, Flex, Switch, Container } from "@chakra-ui/react";
+import React, { useState } from "react";
+import { Flex, Text } from "@chakra-ui/react";
 import { Article } from "../../utils/data";
-import Filter from "../Filter";
-import Card from "../Card";
-import Carousel from "../Carousel";
+import FullReviewCard from "../FullReviewCard";
 import { useApproveDenyButtons } from "../../utils/useApproveDenyButtons";
 import { getLocalStorageObj } from "../../utils/LocalStorageUtils";
 
 const SCREENED_ARTICLES_KEY = "screenedArticles";
 
-type FullReviewProps = {
-  articles: Article[];
-  query: string;
-  setQuery: Dispatch<SetStateAction<string>>;
-  setArticles: Dispatch<React.SetStateAction<Article[]>>;
-};
-
-const FullReview = ({}: FullReviewProps) => {
+const FullReview = () => {
   const [articles, setArticles] = useState<Article[]>(
     getLocalStorageObj(SCREENED_ARTICLES_KEY)
   );
@@ -28,17 +19,18 @@ const FullReview = ({}: FullReviewProps) => {
 
   return (
     <Flex direction="column">
-      <Flex direction="column">
-        {articles &&
-          articles.map((article) => (
-            <Card
-              key={article.doi}
-              article={article}
-              onApproveClick={() => onApproveClick(article)}
-              onRejectClick={() => onRejectClick(article.title)}
-            />
-          ))}
-      </Flex>
+      <Text marginBottom="8px">
+        Read through each article and choose whether to include it!
+      </Text>
+      {articles &&
+        articles.map((article) => (
+          <FullReviewCard
+            key={article.doi}
+            article={article}
+            onApproveClick={() => onApproveClick(article)}
+            onRejectClick={() => onRejectClick(article.title)}
+          />
+        ))}
     </Flex>
   );
 };

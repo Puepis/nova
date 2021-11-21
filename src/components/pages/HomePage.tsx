@@ -103,12 +103,7 @@ const HomePage = () => {
               />
             </TabPanel>
             <TabPanel>
-              <FullReview
-                articles={articles}
-                query={query}
-                setQuery={setQuery}
-                setArticles={setArticles}
-              />
+              <FullReview />
             </TabPanel>
           </TabPanels>
         </Tabs>

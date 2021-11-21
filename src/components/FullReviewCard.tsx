@@ -2,13 +2,17 @@ import React from "react";
 import { Container, Text, Button, Box, Link } from "@chakra-ui/react";
 import { Article } from "../utils/data";
 
-type CardProps = {
+type FullReviewCardProps = {
   article: Article;
   onApproveClick: (obj: any) => void;
   onRejectClick: (title: any) => void;
 };
 
-const Card = ({ article, onApproveClick, onRejectClick }: CardProps) => {
+const FullReviewCard = ({
+  article,
+  onApproveClick,
+  onRejectClick,
+}: FullReviewCardProps) => {
   const { title, authors, publication, abstract, url } = article;
   return (
     <Container
@@ -48,7 +52,7 @@ const Card = ({ article, onApproveClick, onRejectClick }: CardProps) => {
           marginRight="20px"
           color="white"
         >
-          Approve
+          Include
         </Button>
         <Button
           onClick={onRejectClick}
@@ -57,11 +61,11 @@ const Card = ({ article, onApproveClick, onRejectClick }: CardProps) => {
           _hover={{ bg: "red.200" }}
           color="white"
         >
-          Reject
+          Exclude
         </Button>
       </Box>
     </Container>
   );
 };
 
-export default Card;
+export default FullReviewCard;
