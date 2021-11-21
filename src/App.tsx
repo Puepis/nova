@@ -6,8 +6,14 @@ import LoginPage from "./components/pages/LoginPage";
 import HomePage from "./components/pages/HomePage";
 
 const colors = {
-  red: "#E54D54",
-  green: "#25B718",
+  red: {
+    100: "#E54D54",
+    200: "#D01C25",
+  }, 
+  green: {
+    100: "#80D579",
+    200: "#35B52A",
+  },
   purple: {
     100: "#E0AAFF",
     200: "#C77DFF",
