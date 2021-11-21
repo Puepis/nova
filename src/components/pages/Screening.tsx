@@ -1,8 +1,8 @@
 import React, { Dispatch, SetStateAction, useState } from "react";
-import { Text, Flex, Switch } from "@chakra-ui/react";
+import { Text, Flex, Switch, Container } from "@chakra-ui/react";
 import { Article } from "../../utils/data";
 import Filter from "../Filter";
-import Card from '../Card';
+import Card from "../Card";
 
 type ScreeningProps = {
   articles: Article[];
@@ -15,7 +15,13 @@ const Screening = ({ articles, query, setQuery }: ScreeningProps) => {
 
   return (
     <Flex direction="column">
-      <Flex justifyContent="flex-end" marginBottom="12px">
+      <Container
+        display="flex"
+        flexDirection="row"
+        justifyContent="flex-end"
+        marginBottom="12px"
+        maxW="container.md"
+      >
         <Text>Tinder Mode</Text>
         <Switch
           size="lg"
@@ -24,13 +30,13 @@ const Screening = ({ articles, query, setQuery }: ScreeningProps) => {
             setIsCarouselMode((isCarouselMode) => !isCarouselMode)
           }
         />
-      </Flex>
+      </Container>
       {isCarouselMode ? (
         <Text>Carousel</Text>
       ) : (
         <Flex direction="column">
           <Filter query={query} setQuery={setQuery} />
-          {articles[0]  && <Card article={articles[0]}/>}
+          {articles && articles.map((article) => <Card article={article} />)}
         </Flex>
       )}
     </Flex>
