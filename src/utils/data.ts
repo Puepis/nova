@@ -22,9 +22,9 @@ const fetchAndStoreData = async (keyword: string, numResults: number) => {
   const url = `${URL_BASE}?api_key=${process.env.REACT_APP_API_KEY}&q=keyword:${keyword}&s=1&p=${numResults}`;
   const response = await fetch(encodeURI(url));
   const data = await response.json();
-  console.log(parseData(data));
-  setLocalStorageObj("data", data);
-  return data;
+  const articles = parseData(data);
+  setLocalStorageObj("data", articles);
+  return articles;
 };
 
 const parseData = (data: any): Article[] => {

@@ -43,7 +43,7 @@ const LoginPage = () => {
           backgroundColor="purple.200"
           color="white"
           width="100%"
-          onClick={() => navigate("/overview")}
+          onClick={() => navigate("/")}
           textTransform="none"
         >
           Login
