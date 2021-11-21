@@ -47,7 +47,11 @@ const Screening = ({
         />
       </Container>
       {isCarouselMode ? (
-        <Carousel articles={articles} />
+        <Carousel
+          articles={articles}
+          onApproveClick={onApproveClick}
+          onRejectClick={onRejectClick}
+        />
       ) : (
         <Flex direction="column">
           <Filter query={query} setQuery={setQuery} />

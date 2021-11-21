@@ -6,9 +6,15 @@ import Card from "./Card";
 
 type CarouselProps = {
   articles: Article[];
+  onApproveClick: (obj: any) => void;
+  onRejectClick: (title: string) => void;
 };
 
-const Carousel = ({ articles }: CarouselProps) => {
+const Carousel = ({
+  articles,
+  onApproveClick,
+  onRejectClick,
+}: CarouselProps) => {
   const [index, setIndex] = useState(0);
 
   const prevArticle = () => {
@@ -26,7 +32,11 @@ const Carousel = ({ articles }: CarouselProps) => {
           <Icon as={FaChevronLeft} />
         </Button>
         <Box margin="0px 28px">
-          <Card article={articles[index]} />
+          <Card
+            article={articles[index]}
+            onApproveClick={() => onApproveClick(articles[index])}
+            onRejectClick={() => onRejectClick(articles[index].title)}
+          />
         </Box>
         <Button onClick={nextArticle} isDisabled={index >= articles.length - 1}>
           <Icon as={FaChevronRight} />

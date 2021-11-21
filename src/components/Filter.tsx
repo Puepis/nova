@@ -28,7 +28,7 @@ const FilterBadge = ({ filterValue, setFilterValue }: FilterBadgeProps) => {
       backgroundColor="purple.200"
       border="2px solid"
       borderColor="purple.300"
-      borderRadius="12px"
+      borderRadius="6px"
     >
       {filterValue}
       <Button
