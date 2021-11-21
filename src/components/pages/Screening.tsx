@@ -2,6 +2,7 @@ import React, { Dispatch, SetStateAction, useState } from "react";
 import { Text, Flex, Switch } from "@chakra-ui/react";
 import { Article } from "../../utils/data";
 import Filter from "../Filter";
+import Card from '../Card';
 
 type ScreeningProps = {
   articles: Article[];
@@ -29,6 +30,7 @@ const Screening = ({ articles, query, setQuery }: ScreeningProps) => {
       ) : (
         <Flex direction="column">
           <Filter query={query} setQuery={setQuery} />
+          {articles[0]  && <Card article={articles[0]}/>}
         </Flex>
       )}
     </Flex>

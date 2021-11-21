@@ -31,7 +31,7 @@ const HomePage = () => {
       <Header />
       <Box display="flex" justifyContent="center">
         <Tabs
-          width="44%"
+          width="60%"
           align="center"
           alignContent="center"
           variant="enclosed"

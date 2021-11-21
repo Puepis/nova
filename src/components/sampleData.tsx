@@ -1,4 +1,4 @@
-export const sampleArticle =         {
+export const sampleArticle = {
   contentType: "Article",
   identifier: "doi:10.1007/s00737-021-01126-3",
   language: "en",
