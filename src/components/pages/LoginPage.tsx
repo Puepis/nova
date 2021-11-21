@@ -11,8 +11,7 @@ const LoginPage = () => {
       <Flex background="gray.100" width="40vw" height="100vh">
         <Flex direction="column" height="100%">
           <Flex margin="20px">
-            {/* <Image width="80px" src={Logo} alt="Nova logo" /> */}
-            <Heading as="h3" size="lg" marginLeft="40px">
+            <Heading as="h3" size="lg" marginLeft="20px">
               Nova
             </Heading>
           </Flex>

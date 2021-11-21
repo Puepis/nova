@@ -23,16 +23,13 @@ const FullReviewCard = ({
       marginBottom="16px"
     >
       <Text fontSize="10px" marginBottom="8px">
-        Published: {publication.publicationDate}
+        Published: {publication.publicationDate} / {publication.publicationName}
       </Text>
-      <Text fontSize="14px" marginBottom="6px">
+      <Text fontWeight="semibold" fontSize="18px" marginBottom="6px">
         {title}
       </Text>
-      <Text fontSize="11px" marginBottom="16px">
+      <Text fontSize="12px" marginBottom="16px">
         {authors.toString()}
-      </Text>
-      <Text fontSize="12px" marginBottom="36px">
-        {publication.publicationName}
       </Text>
       <Text fontSize="12px" fontWeight="bold" marginBottom="6px">
         Abstract
@@ -40,8 +37,11 @@ const FullReviewCard = ({
       <Text fontSize="12px" marginBottom="16px">
         {abstract}
       </Text>
-      <Text fontSize="10px" marginBottom="44px">
-        Original article: <Link>{url}</Link>
+      <Text fontSize="11px" marginBottom="44px">
+        Original article:{" "}
+        <Link href={url} isExternal color="blue.500">
+          {url}
+        </Link>
       </Text>
       <Box display="flex" flexDirection="row" justifyContent="flex-end">
         <Button

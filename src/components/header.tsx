@@ -1,8 +1,10 @@
 import React from "react";
 import { Flex, Button, Text, Image } from "@chakra-ui/react";
 import Logo from "../assets/logo.svg";
+import { useNavigate } from "react-router";
 
 const Header = () => {
+  const navigate = useNavigate();
   return (
     <Flex
       w="100%"
@@ -16,7 +18,11 @@ const Header = () => {
           Nova
         </Text>
       </Flex>
-      <Button backgroundColor="purple.300" color="white">
+      <Button
+        backgroundColor="purple.300"
+        color="white"
+        onClick={() => navigate("/login")}
+      >
         Logout
       </Button>
     </Flex>

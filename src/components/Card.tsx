@@ -9,7 +9,8 @@ type CardProps = {
 };
 
 const Card = ({ article, onApproveClick, onRejectClick }: CardProps) => {
-  const { title, authors, publication, abstract, url, approvalsNeeded } = article;
+  const { title, authors, publication, abstract, url, approvalsNeeded } =
+    article;
   return (
     <Container
       maxW="container.md"
@@ -19,29 +20,34 @@ const Card = ({ article, onApproveClick, onRejectClick }: CardProps) => {
       marginBottom="16px"
     >
       <Text fontSize="10px" marginBottom="8px">
-        Published: {publication.publicationDate}
+        Published: {publication.publicationDate} / {publication.publicationName}
       </Text>
-      <Text fontWeight="bold" fontSize="14px" marginBottom="6px">
+      <Text fontWeight="semibold" fontSize="18px" marginBottom="6px">
         {title}
       </Text>
-      <Text fontSize="11px" marginBottom="16px">
+      <Text fontSize="12px" marginBottom="16px">
         {authors.toString()}
       </Text>
-      <Text fontSize="12px" marginBottom="36px">
-        {publication.publicationName}
-      </Text>
-      <Text fontSize="12px" fontWeight="bold" marginBottom="6px">
+      <Text fontSize="14px" fontWeight="bold" marginBottom="6px">
         Abstract
       </Text>
       <Text fontSize="12px" marginBottom="16px">
         {abstract}
       </Text>
-      <Text fontSize="10px" marginBottom="44px">
-        Original article: <Link>{url}</Link>
+      <Text fontSize="11px" marginBottom="44px">
+        Original article:{" "}
+        <Link href={url} isExternal color="blue.500">
+          {url}
+        </Link>
       </Text>
-      <Box display="flex" flexDirection="row" justifyContent="space-between">
-        <Text fontWeight="medium" fontSize="12px" justifySelf="flex-start">
-          {approvalsNeeded} approvals needed
+      <Box
+        display="flex"
+        flexDirection="row"
+        justifyContent="space-between"
+        alignItems="center"
+      >
+        <Text fontWeight="semibold" fontSize="14px" justifySelf="flex-start">
+          {approvalsNeeded} approval(s) needed
         </Text>
         <Box>
           <Button

@@ -25,7 +25,7 @@ const HomePage = () => {
       // Update debounced value after delay
       const handler = setTimeout(() => {
         (async () => {
-          const data = await fetchAndStoreData(query, 10);
+          const data = await fetchAndStoreData(query, 20);
           setArticles(data);
         })();
       }, delay);
@@ -87,7 +87,7 @@ const HomePage = () => {
                 borderColor: "purple.300",
               }}
             >
-              <Text fontWeight="bold">FULL REVIEW</Text>
+              <Text fontWeight="bold">FINAL REVIEW</Text>
             </Tab>
           </TabList>
           <TabPanels>
