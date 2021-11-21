@@ -1,16 +1,14 @@
 import React from "react";
 import { Container, Text, Button, Box, Link } from "@chakra-ui/react";
 import { Article } from "../utils/data";
-import {
-  setLocalStorageObj,
-  getLocalStorageObj,
-} from "../utils/LocalStorageUtils";
 
 type CardType = {
   article: Article;
+  onApproveClick: (obj: any) => void;
+  onRejectClick: (title: any) => void;
 };
 
-const Card = ({ article }: CardType) => {
+const Card = ({ article, onApproveClick, onRejectClick }: CardType) => {
   const { title, authors, publication, abstract, url } = article;
   return (
     <Container
@@ -42,6 +40,7 @@ const Card = ({ article }: CardType) => {
       </Text>
       <Box display="flex" flexDirection="row" justifyContent="flex-end">
         <Button
+          onClick={onApproveClick}
           width="120px"
           backgroundColor="green.100"
           _hover={{ bg: "green.200" }}
@@ -51,6 +50,7 @@ const Card = ({ article }: CardType) => {
           Approve
         </Button>
         <Button
+          onClick={onRejectClick}
           width="120px"
           backgroundColor="red.100"
           _hover={{ bg: "red.200" }}
