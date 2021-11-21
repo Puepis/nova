@@ -3,6 +3,7 @@ import { Text, Flex, Switch, Container } from "@chakra-ui/react";
 import { Article } from "../../utils/data";
 import Filter from "../Filter";
 import Card from "../Card";
+import Carousel from "../Carousel";
 
 type ScreeningProps = {
   articles: Article[];
@@ -22,7 +23,7 @@ const Screening = ({ articles, query, setQuery }: ScreeningProps) => {
         marginBottom="12px"
         maxW="container.md"
       >
-        <Text>Tinder Mode</Text>
+        <Text>Carousel Mode</Text>
         <Switch
           size="lg"
           marginLeft="16px"
@@ -32,7 +33,7 @@ const Screening = ({ articles, query, setQuery }: ScreeningProps) => {
         />
       </Container>
       {isCarouselMode ? (
-        <Text>Carousel</Text>
+        <Carousel articles={articles} />
       ) : (
         <Flex direction="column">
           <Filter query={query} setQuery={setQuery} />
