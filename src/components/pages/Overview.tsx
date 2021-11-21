@@ -1,10 +1,6 @@
-import React, { useEffect } from "react";
-import { fetchAndStoreData } from "../../utils/data";
+import React from "react";
 
 const Overview = () => {
-  useEffect(() => {
-    fetchAndStoreData("bipolar disorder", 10);
-  }, []);
   return <div>WIP</div>;
 };
 

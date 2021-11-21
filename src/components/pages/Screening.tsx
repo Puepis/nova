@@ -1,33 +1,38 @@
-import React from 'react';
-import { Box, Tabs, TabList, Tab, TabPanels, TabPanel } from '@chakra-ui/react';
-import Header from '../header'
+import React, { Dispatch, SetStateAction, useState } from "react";
+import { Text, Flex, Switch } from "@chakra-ui/react";
+import { Article } from "../../utils/data";
+import Filter from "../Filter";
 
-const Screening = () => {
+type ScreeningProps = {
+  articles: Article[];
+  query: string;
+  setQuery: Dispatch<SetStateAction<string>>;
+};
+
+const Screening = ({ articles, query, setQuery }: ScreeningProps) => {
+  const [isCarouselMode, setIsCarouselMode] = useState(false);
+
   return (
-    <Box>
-      <Header />
-      <Box display="flex" justifyContent="center">
-        <Tabs width="44%" align="center" alignContent="center" variant="enclosed" isFitted>
-          <TabList>
-            <Tab>Test</Tab>
-            <Tab>Test2</Tab>
-            <Tab>Test3</Tab>
-          </TabList>
-          <TabPanels>
-            <TabPanel>
-              Test
-            </TabPanel>
-            <TabPanel>
-              Test2
-            </TabPanel>
-            <TabPanel>
-              Test3
-            </TabPanel>
-          </TabPanels>
-        </Tabs>
-      </Box>
-    </Box>
-  )
-}
+    <Flex direction="column">
+      <Flex justifyContent="flex-end" marginBottom="12px">
+        <Text>Tinder Mode</Text>
+        <Switch
+          size="lg"
+          marginLeft="16px"
+          onChange={() =>
+            setIsCarouselMode((isCarouselMode) => !isCarouselMode)
+          }
+        />
+      </Flex>
+      {isCarouselMode ? (
+        <Text>Carousel</Text>
+      ) : (
+        <Flex direction="column">
+          <Filter query={query} setQuery={setQuery} />
+        </Flex>
+      )}
+    </Flex>
+  );
+};
 
-export default Screening
+export default Screening;
