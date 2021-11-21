@@ -7,7 +7,6 @@ import {
   TabPanels,
   TabPanel,
   Text,
-  Flex,
 } from "@chakra-ui/react";
 import Header from "../Header";
 import Screening from "./Screening";
@@ -15,7 +14,7 @@ import { fetchAndStoreData, Article } from "../../utils/data";
 import Overview from "./Overview";
 
 const HomePage = () => {
-  const [query, setQuery] = useState("bipolar");
+  const [query, setQuery] = useState("");
   const [articles, setArticles] = useState<Article[]>([]);
 
   useEffect(() => {

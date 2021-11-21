@@ -50,7 +50,11 @@ type FilterProps = {
 
 const Filter = ({ query, setQuery }: FilterProps) => {
   return (
-    <Container maxW="container.md" boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25)">
+    <Container
+      maxW="container.md"
+      boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25)"
+      marginBottom="16px"
+    >
       <Flex padding="16px" direction="column">
         <Flex direction="row" marginBottom="4px">
           <Flex flex={2} alignItems="center">

@@ -16,6 +16,7 @@ const Card = ({ article, onApproveClick, onRejectClick }: CardType) => {
       boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25)"
       display="table"
       padding="27px"
+      marginBottom="16px"
     >
       <Text fontSize="10px" marginBottom="8px">
         Published: {publication.publicationDate}
