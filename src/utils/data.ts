@@ -15,6 +15,7 @@ export interface Article {
   url: string;
   publication: Publication;
   copyright: string;
+  approvalsNeeded: number;
 }
 
 const URL_BASE = "https://api.springernature.com/metadata/json";
@@ -43,6 +44,7 @@ const parseData = (data: any): Article[] => {
         number: record["number"],
       },
       copyright: record["copyright"],
+      approvalsNeeded: Math.ceil(Math.random() * 2),
     };
   });
 };

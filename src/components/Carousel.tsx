@@ -32,11 +32,13 @@ const Carousel = ({
           <Icon as={FaChevronLeft} />
         </Button>
         <Box margin="0px 28px">
-          <Card
-            article={articles[index]}
-            onApproveClick={() => onApproveClick(articles[index])}
-            onRejectClick={() => onRejectClick(articles[index].title)}
-          />
+          {articles[index] && (
+            <Card
+              article={articles[index]}
+              onApproveClick={() => onApproveClick(articles[index])}
+              onRejectClick={() => onRejectClick(articles[index].title)}
+            />
+          )}
         </Box>
         <Button onClick={nextArticle} isDisabled={index >= articles.length - 1}>
           <Icon as={FaChevronRight} />
