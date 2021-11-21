@@ -86,6 +86,7 @@ const HomePage = () => {
                 articles={articles}
                 query={query}
                 setQuery={setQuery}
+                setArticles={setArticles}
               />
             </TabPanel>
             <TabPanel>Test3</TabPanel>
