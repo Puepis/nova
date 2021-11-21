@@ -38,9 +38,42 @@ const HomePage = () => {
           isFitted
         >
           <TabList>
-            <Tab>OVERVIEW</Tab>
-            <Tab>SCREENING</Tab>
-            <Tab>FULL REVIEW</Tab>
+            <Tab
+              borderRadius="0px"
+              border="1px solid"
+              borderColor="purple.300"
+              _selected={{
+                border: "1px solid",
+                borderBottom: "4px solid",
+                borderColor: "purple.300",
+              }}
+            >
+              OVERVIEW
+            </Tab>
+            <Tab
+              borderRadius="0px"
+              border="1px solid"
+              borderColor="purple.300"
+              _selected={{
+                border: "1px solid",
+                borderBottom: "4px solid",
+                borderColor: "purple.300",
+              }}
+            >
+              SCREENING
+            </Tab>
+            <Tab
+              borderRadius="0px"
+              border="1px solid"
+              borderColor="purple.300"
+              _selected={{
+                border: "1px solid",
+                borderBottom: "4px solid",
+                borderColor: "purple.300",
+              }}
+            >
+              FULL REVIEW
+            </Tab>
           </TabList>
           <TabPanels>
             <TabPanel>Test</TabPanel>
