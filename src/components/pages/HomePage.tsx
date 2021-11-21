@@ -13,18 +13,31 @@ import Screening from "./Screening";
 import { fetchAndStoreData, Article } from "../../utils/data";
 import Overview from "./Overview";
 
+const delay = 1000;
+
 const HomePage = () => {
   const [query, setQuery] = useState("");
   const [articles, setArticles] = useState<Article[]>([]);
 
-  useEffect(() => {
-    if (query === "bipolar disorder") {
-      (async () => {
-        const data = await fetchAndStoreData(query, 10);
-        setArticles(data);
-      })();
-    }
-  }, [query]);
+  useEffect(
+    () => {
+      // Update debounced value after delay
+      const handler = setTimeout(() => {
+        (async () => {
+          const data = await fetchAndStoreData(query, 10);
+          setArticles(data);
+        })();
+      }, delay);
+
+      // Cancel the timeout if value changes (also on delay change or unmount)
+      // This is how we prevent debounced value from updating if value is changed ...
+      // .. within the delay period. Timeout gets cleared and restarted.
+      return () => {
+        clearTimeout(handler);
+      };
+    },
+    [query] // Only re-call effect if value or delay changes
+  );
 
   return (
     <Box>
