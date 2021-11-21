@@ -36,7 +36,10 @@ const Screening = ({ articles, query, setQuery }: ScreeningProps) => {
       ) : (
         <Flex direction="column">
           <Filter query={query} setQuery={setQuery} />
-          {articles && articles.map((article) => <Card article={article} />)}
+          {articles &&
+            articles.map((article) => (
+              <Card key={article.doi} article={article} />
+            ))}
         </Flex>
       )}
     </Flex>

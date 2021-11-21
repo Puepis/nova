@@ -32,11 +32,12 @@ const HomePage = () => {
       <Header />
       <Box display="flex" justifyContent="center">
         <Tabs
-          width="60%"
+          width="container.md"
           align="center"
           alignContent="center"
           variant="enclosed"
           isFitted
+          marginTop="36px"
         >
           <TabList>
             <Tab
@@ -49,7 +50,7 @@ const HomePage = () => {
                 borderColor: "purple.300",
               }}
             >
-              OVERVIEW
+              <Text fontWeight="bold">OVERVIEW</Text>
             </Tab>
             <Tab
               borderRadius="0px"
@@ -61,7 +62,7 @@ const HomePage = () => {
                 borderColor: "purple.300",
               }}
             >
-              SCREENING
+              <Text fontWeight="bold">SCREENING</Text>
             </Tab>
             <Tab
               borderRadius="0px"
@@ -73,7 +74,7 @@ const HomePage = () => {
                 borderColor: "purple.300",
               }}
             >
-              FULL REVIEW
+              <Text fontWeight="bold">FULL REVIEW</Text>
             </Tab>
           </TabList>
           <TabPanels>

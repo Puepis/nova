@@ -1,5 +1,5 @@
 import React from "react";
-import { Flex, Button, Text, Box, Image } from "@chakra-ui/react";
+import { Flex, Button, Text, Image } from "@chakra-ui/react";
 import Logo from "../assets/logo.svg";
 
 const Header = () => {
