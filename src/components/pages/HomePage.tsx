@@ -12,6 +12,7 @@ import Header from "../Header";
 import Screening from "./Screening";
 import { fetchAndStoreData, Article } from "../../utils/data";
 import Overview from "./Overview";
+import FullReview from "./FullReview";
 
 const delay = 1000;
 
@@ -101,7 +102,14 @@ const HomePage = () => {
                 setArticles={setArticles}
               />
             </TabPanel>
-            <TabPanel>Test3</TabPanel>
+            <TabPanel>
+              <FullReview
+                articles={articles}
+                query={query}
+                setQuery={setQuery}
+                setArticles={setArticles}
+              />
+            </TabPanel>
           </TabPanels>
         </Tabs>
       </Box>
