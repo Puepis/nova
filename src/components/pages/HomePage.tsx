@@ -12,6 +12,7 @@ import {
 import Header from "../Header";
 import Screening from "./Screening";
 import { fetchAndStoreData, Article } from "../../utils/data";
+import Overview from "./Overview";
 
 const HomePage = () => {
   const [query, setQuery] = useState("bipolar");
@@ -43,7 +44,9 @@ const HomePage = () => {
             <Tab>FULL REVIEW</Tab>
           </TabList>
           <TabPanels>
-            <TabPanel>Test</TabPanel>
+            <TabPanel>
+              <Overview />
+            </TabPanel>
             <TabPanel>
               <Screening
                 articles={articles}

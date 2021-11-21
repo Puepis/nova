@@ -1,27 +1,25 @@
 import React from "react";
-import { Flex, Button, Text } from "@chakra-ui/react";
+import { Flex, Button, Text, Box, Image } from "@chakra-ui/react";
+import Logo from "../assets/logo.svg";
 
 const Header = () => {
   return (
-    <>
-      <Flex w="100%" boxShadow="0px -6px 10px black" padding="8px">
-        <Text
-          margin="8px 0px 0px 16px"
-          fontFamily="inter"
-          fontWeight="bold"
-          fontSize="30px"
-        >
+    <Flex
+      w="100%"
+      boxShadow="0px -6px 10px black"
+      justifyContent="space-between"
+      padding="18px 32px"
+    >
+      <Flex direction="row">
+        <Image width="34px" src={Logo} alt="Nova logo" />
+        <Text fontWeight="bold" fontSize="26px" marginLeft="8px">
           Nova
         </Text>
-        <Button
-          margin="8px 16px 0px auto"
-          backgroundColor="purple.300"
-          color="white"
-        >
-          Logout
-        </Button>
       </Flex>
-    </>
+      <Button backgroundColor="purple.300" color="white">
+        Logout
+      </Button>
+    </Flex>
   );
 };
 
